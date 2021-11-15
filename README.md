@@ -1,6 +1,6 @@
 # Git & GitHub Documentation
 
-### Lesson 1. Introduction to git and GitHub
+### [Lesson 2. Introduction to git and GitHub](https://youtu.be/ulTs4vqOzyo)
 
 1. git?
    - git is a version control software
@@ -20,14 +20,14 @@
      
 <br/>
 
-### Lesson 2. Environment setup
+### [Lesson 3. How to set git environment and configuration](https://youtu.be/vj5-nkhTRbo)
 
 - Download and install git on your pc: https://git-scm.com/
 - check git version: open terminal or cmd then use the command `git --version` to find out whether git is installed or not. if git is installed it will return a version number of git.
 
 <br/>
 
-### Lesson 3. git configuration
+git configuration
 
 1.  check all configuartion options: `git config`
 2.  set global user name and user email for all repository/git folders (if you want to set different username and email for different git repository then remove --global)
@@ -43,7 +43,7 @@
 
 <br/>
 
-### Lesson 4. creating git repo and adding new files
+### [Lesson 4. creating git repo and adding new files](https://youtu.be/oa6viOCTEeM)
 
 1.  creating a git folder
 
@@ -80,3 +80,34 @@
 - Git is aware of the file but not added to our git repo
 - Files in git repo can have 2 states – tracked (git knows and added to git repo), untracked (file in the working directory, but not added to the local repository)
 - To make the file trackable stagging or adding is required
+
+<br/>
+
+### [Lesson 5. how to add files in staging area & remove files](hhttps://youtu.be/IDhgZX4esQQ)
+
+1.  adding files to stagging area:
+
+- `git add fileName` add a file in staging area / index
+- `git add .` add all files of directory to stagging area not subdirectory
+- `git add -A` add all files of directory and subdirectory to stagging area
+- `git rm --cached fileName` unstage a file from staging area
+- `git diff` - checking the differences of a staged file
+- `git restore fileName` - restore the file
+
+<br/>
+
+### [Lesson 6. practice-1](https://youtu.be/jSj-GF-utls)
+
+<br/>
+
+### [Lesson 7. how to add files in staging area & remove files](https://youtu.be/gmBKbxKGcn8)
+
+- `git commit -m "message"` move the file to local repository from stagging area
+- `git log` check the commit history
+- `git reset --soft HEAD^` uncommit the commit in HEAD and move to staging area
+- `git reset HEAD^` uncommit the commit in HEAD and move to unstaging / working area
+- `git reset --hard HEAD^` uncommit the commit in HEAD and delete the commit completely with all the changes
+
+<br/>
+
+### [Lesson 7. how to add files in staging area & remove files](https://youtu.be/gmBKbxKGcn8)
