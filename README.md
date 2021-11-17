@@ -110,4 +110,33 @@ git configuration
 
 <br/>
 
-### [Lesson 7. how to add files in staging area & remove files](https://youtu.be/gmBKbxKGcn8)
+### [Lesson 8. git HEAD and undo](https://youtu.be/xUNsecljvog)
+
+- `git log --oneline"`
+- `git show"`
+- `git show HEAD^`
+- `git show commit-id`
+- `git checkout commit-id`
+- `git checkout master`
+
+<br/>
+
+### [Lesson 9. git HEAD and undo practical](https://youtu.be/rEoeC-HBqws)
+
+<br/>
+
+### [Lesson 10. git revert]()
+
+<br/>
+
+### [Lesson 11. git ignore](https://youtu.be/CKla6oWTezM)
+
+- create a .gitignore file and add the things you do not want to add in the stagging area
+- Inside .gitignore we can keep secret files, hidden files, temporary files, log files
+- `secret.txt` secret.txt will be ignored
+- `*.txt` ignore all files with .txt extension
+- `!main.txt` ignore all files with .txt extension without .main.txt
+- `test?.txt` ignore all files like test1.txt test2.txt
+- `temp/` all the files in temp folders will be ignored
+
+<br/>
