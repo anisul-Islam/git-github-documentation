@@ -108,15 +108,14 @@ git configuration
 - `git reset HEAD^` uncommit the commit in HEAD and move to unstaging / working area
 - `git reset --hard HEAD^` uncommit the commit in HEAD and delete the commit completely with all the changes
 
+<img src="./images/git-level.png" width="90%">
+
 <br/>
 
 ### [Lesson 8. git HEAD and undo theory](https://youtu.be/xUNsecljvog)
 
 - `git log --oneline"`
-- `git show
-
-`
-
+- `git show`
 - `git show HEAD^`
 - `git show commit-id`
 - `git checkout commit-id`
