@@ -100,7 +100,7 @@ git configuration
 
 <br/>
 
-### [Lesson 7. how to add files in staging area & remove files](https://youtu.be/gmBKbxKGcn8)
+### [Lesson 7. commit & uncommit](https://youtu.be/gmBKbxKGcn8)
 
 - `git commit -m "message"` move the file to local repository from stagging area
 - `git log` check the commit history
@@ -110,10 +110,13 @@ git configuration
 
 <br/>
 
-### [Lesson 8. git HEAD and undo](https://youtu.be/xUNsecljvog)
+### [Lesson 8. git HEAD and undo theory](https://youtu.be/xUNsecljvog)
 
 - `git log --oneline"`
-- `git show"`
+- `git show
+
+`
+
 - `git show HEAD^`
 - `git show commit-id`
 - `git checkout commit-id`
@@ -140,3 +143,36 @@ git configuration
 - `temp/` all the files in temp folders will be ignored
 
 <br/>
+
+### [Lesson 12. how to create github repository and commits]()
+
+- create a .gitignore file and add the things you do not want to add in the stagging area
+
+<br/>
+
+### [Lesson 13. README.md](https://youtu.be/bl0-DTgh-mw)
+
+- Everything you need to know about README.md is discussed in the video.
+- 6 heading levels: number of hashes define heading levels. check the following examples:
+  - `# heading 1 level text is here`
+  - `## heading 2 level text is here`
+- bold syntax: `__text goes here__`
+- italic syntax: `_text goes here_`
+- italic syntax: `_text goes here_`
+- strikethrouh syntax: `~this is~~`
+- single line code syntax: `` place code inside backticks
+- multiple line code syntax: ``` place code inside three open and closing backticks
+- multiple line code syntax: ```html for specific lanaguage use language name when starting; not closing
+- for more please check the video by clicking the link given above
+
+<br>
+
+### [Lesson 14. how to create branches and merge on github](https://youtu.be/CKla6oWTezM)
+
+- create a .gitignore file and add the things you do not want to add in the stagging area
+
+<br>
+
+### [Lesson 15. forks and pull requests on github](https://youtu.be/CKla6oWTezM)
+
+- create a .gitignore file and add the things you do not want to add in the stagging area
