@@ -83,7 +83,7 @@ git configuration
 
 <br/>
 
-### [Lesson 5. how to add files in staging area & remove files](hhttps://youtu.be/IDhgZX4esQQ)
+### [Lesson 5. how to add files in staging area & remove files](https://youtu.be/IDhgZX4esQQ)
 
 1.  adding files to stagging area:
 
@@ -114,7 +114,7 @@ git configuration
 
 ### [Lesson 8. git HEAD and undo theory](https://youtu.be/xUNsecljvog)
 
-- `git log --oneline"`
+- `git log --oneline`
 - `git show`
 - `git show HEAD^`
 - `git show commit-id`
@@ -145,7 +145,8 @@ git configuration
 
 ### [Lesson 12. how to create github repository and commits]()
 
-- create a .gitignore file and add the things you do not want to add in the stagging area
+- sign in to your github account
+- create a git repo
 
 <br/>
 
@@ -166,12 +167,41 @@ git configuration
 
 <br>
 
-### [Lesson 14. how to create branches and merge on github](https://youtu.be/CKla6oWTezM)
+### [Lesson 14. Connecting local repo to remote repo](https://youtu.be/sLX2YWYpkAc)
 
-- create a .gitignore file and add the things you do not want to add in the stagging area
+- check remote connection: `git remote` or `git remote -v`
+- `git remote add name <REMOTE_URL>` example: git remote add origin http://...
 
 <br>
 
-### [Lesson 15. forks and pull requests on github](https://youtu.be/CKla6oWTezM)
+### [Lesson 15. push and pull](https://youtu.be/UXEoCfYwI1Q)
 
-- create a .gitignore file and add the things you do not want to add in the stagging area
+- push a branch `git push -u origin branch_name`
+- push all branches `git push --all`
+- pull from a repo: `git pull` which is equivalent to git fetch + git merge
+
+<br>
+
+### [Lesson 16. branching and merging](https://youtu.be/3k8Bq_usPsk)
+
+- Branch is a new and separate branch of master/main repository
+- create a branch `git branch branch_name`
+- List branches `git branch`
+- List all remote branches `git branch -r`
+- List all local & remote branches `git branch -a`
+- move to a branch `git checkout branch_name`
+- create and move to a branch `git checkout -b branch_name`
+- delete a branch: `git branch -d branch_name`
+- merge branches:
+  ```
+    git checkout branchName
+    git merge branchName
+  ```
+
+<br>
+
+### [Lesson 18. git and GitHub practice - 2](https://youtu.be/IHVzseHh3Bo)
+
+<br>
+
+### [Lesson 19. GitHub Issues](https://youtu.be/E5HFlpx7QP4)
