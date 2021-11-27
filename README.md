@@ -197,6 +197,7 @@ git configuration
     git checkout branchName
     git merge branchName
   ```
+- `git log --oneline --all --graph`
 
 <br>
 
@@ -205,3 +206,20 @@ git configuration
 <br>
 
 ### [Lesson 19. GitHub Issues](https://youtu.be/E5HFlpx7QP4)
+
+<br>
+
+### [Lesson 20. 2-way and 3-way merges]()
+
+- Reeference:
+  - https://www.tutorialspoint.com/what-is-a-fast-forward-merge-in-git
+  - https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
+  - https://medium.com/@koteswar.meesala/git-fast-forward-merge-vs-three-way-merge-8591434dd350
+
+<br>
+
+### [Lesson 21. Merge Conflicts]()
+
+- https://www.tutorialspoint.com/what-is-merge-conflict-in-git-how-to-handle-merge-conflicts
+
+<br>
