@@ -143,7 +143,7 @@ git configuration
 
 <br/>
 
-### [Lesson 12. how to create github repository and commits]()
+### [Lesson 12. how to create github repository and commits](https://youtu.be/HRVNOjl9e5U)
 
 - sign in to your github account
 - create a git repo
