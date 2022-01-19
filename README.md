@@ -201,6 +201,10 @@ git configuration
 
 <br>
 
+### [Lesson 17. branching and merging locally](https://youtu.be/AhBxGYzdWI0)
+
+<br>
+
 ### [Lesson 18. git and GitHub practice - 2](https://youtu.be/IHVzseHh3Bo)
 
 <br>
