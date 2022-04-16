@@ -227,3 +227,5 @@ git configuration
 - https://www.tutorialspoint.com/what-is-merge-conflict-in-git-how-to-handle-merge-conflicts
 
 <br>
+
+<h2> Just for practice </h2>
