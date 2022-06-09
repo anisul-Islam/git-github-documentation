@@ -171,6 +171,7 @@ git configuration
 
 - check remote connection: `git remote` or `git remote -v`
 - `git remote add name <REMOTE_URL>` example: git remote add origin http://...
+- to clone a remote repository: `git clone <REMOTE_URL>`
 
 <br>
 
