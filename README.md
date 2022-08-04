@@ -151,19 +151,73 @@ git configuration
 <br/>
 
 ### [Lesson 13. README.md](https://youtu.be/bl0-DTgh-mw)
-
+[README video](https://youtu.be/bl0-DTgh-mw)
 - Everything you need to know about README.md is discussed in the video.
 - 6 heading levels: number of hashes define heading levels. check the following examples:
   - `# heading 1 level text is here`
   - `## heading 2 level text is here`
-- bold syntax: `__text goes here__`
+- bold syntax: `**text goes here**`
 - italic syntax: `_text goes here_`
-- italic syntax: `_text goes here_`
-- strikethrouh syntax: `~this is~~`
-- single line code syntax: `` place code inside backticks
-- multiple line code syntax: ``` place code inside three open and closing backticks
-- multiple line code syntax: ```html for specific lanaguage use language name when starting; not closing
-- for more please check the video by clicking the link given above
+- bold and italic syntax: `**_text goes here_**`
+- strikethrouh syntax: `~~this is~~`
+- single line code syntax: `let x = 20+30` place code inside backticks
+- multiple line code syntax: ``` place code inside three open and closing backticks ```
+             ```
+              let x = 30;
+              let y= 20;
+              let sum = x+y;
+              console.log(sum)
+            ```
+- multiple line code syntax language specific: ```html for specific lanaguage use language name when starting; not closing
+            ```js
+               let x = 30;
+               let y = 20;
+               let sum = x + y;
+               console.log(sum);
+            ```
+- Ordered List syntax ->
+      ```
+           1. HTML
+            2. CSS
+
+               1. Fundamental
+               2. CSS Architecture - BEM
+               3. CSS Preprocessor - SASS
+
+            3. JS
+      ```
+- Unordered List syntax -> 
+     ```
+      - html
+      - css
+        - Fundamental
+        - CSS Architecture - BEM
+        - CSS Preprocessor - SASS
+      - js
+     ```
+- Task List 
+   ```
+      - [x] Task1
+      - [x] Task2
+      - [x] Task3
+   ```
+   
+- adding link
+   ```
+      <!-- automatic link -->
+
+      http://www.studywithanis.com
+
+      <!-- markdown link syntax -->
+      [title](link)
+      [studywithanis](http://www.studywithanis.com)  
+      [studywithanis][websitelink]
+
+      <!-- all link is here  -->
+
+      [websitelink]: http://www.studywithanis.com
+
+   ```
 
 <br>
 
