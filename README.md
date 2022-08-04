@@ -151,7 +151,7 @@ git configuration
 <br/>
 
 ### [Lesson 13. README.md](https://youtu.be/bl0-DTgh-mw)
-[README video](https://youtu.be/bl0-DTgh-mw)
+[README video is here](https://youtu.be/bl0-DTgh-mw)
 - Everything you need to know about README.md is discussed in the video.
 - 6 heading levels: number of hashes define heading levels. check the following examples:
   - `# heading 1 level text is here`
@@ -208,6 +208,25 @@ git configuration
 
       [websitelink]: http://www.studywithanis.com
 
+- adding image syntax -> ![alt text](imageURL)
+      `![1800 milestone](https://i.postimg.cc/qvZpmxKF/1-800-Uploads-Milestone.png)`
+
+- adding emoji   
+      [emoji src](https://getemoji.com/)
+      ### Smileys
+      😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔          😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮       😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
+
+      ### Gestures and Body Parts
+      👋 🤚 🖐 ✋ 🖖 👌 🤌 🤏 ✌️ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕 👇 ☝️ 👍 👎 ✊ 👊 🤛 🤜 👏 🙌 👐 🤲 🤝 🙏 ✍️ 💅 🤳 💪 🦾 🦵 🦿 🦶      👣 👂 🦻 👃 🫀 🫁 🧠 🦷 🦴 👀 👁 👅 👄 💋 🩸
+      
+- adding table 
+   ```
+      table syntax
+      | heading1 | heading2 |
+      | ----- | ----- |
+      | data1 | data2 |
+      | data3 | data4 |
+      | data5 | data6 |
    ```
 
 <br>
