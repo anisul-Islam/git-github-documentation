@@ -160,22 +160,13 @@ git configuration
 - italic syntax: `_text goes here_`
 - bold and italic syntax: `**_text goes here_**`
 - strikethrouh syntax: `~~this is~~`
-- single line code syntax: `let x = 20+30` place code inside backticks
-- multiple line code syntax: ``` place code inside three open and closing backticks ```
-             ```
-              let x = 30;
-              let y= 20;
-              let sum = x+y;
-              console.log(sum)
-            ```
+- single line code syntax: `` place code inside backticks
+- multiple line code syntax: ``` place code inside three open and closing backticks 
+            
 - multiple line code syntax language specific: ```html for specific lanaguage use language name when starting; not closing
-            ```js
-               let x = 30;
-               let y = 20;
-               let sum = x + y;
-               console.log(sum);
-            ```
-- Ordered List syntax ->
+           
+- Ordered List syntax 
+      
       ```
            1. HTML
             2. CSS
