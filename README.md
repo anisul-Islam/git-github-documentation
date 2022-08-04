@@ -208,7 +208,7 @@ git configuration
 
       [websitelink]: http://www.studywithanis.com
 
-- adding image syntax -> ![alt text](imageURL)
+- adding image syntax -> `![alt text](imageURL)`
       `![1800 milestone](https://i.postimg.cc/qvZpmxKF/1-800-Uploads-Milestone.png)`
 
 - adding emoji   
