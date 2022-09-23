@@ -83,6 +83,25 @@ git configuration
 
 <br/>
 
+### [multi-code inline-block](https://youtu.be/IDhgZX4esQQ)
+
+```css
+head{
+   font-size:20px;
+   color:green;
+   background-color:red;
+}
+```
+<br/>
+
+```javascript
+{
+   console.log{'Hello World'}
+}
+```
+
+<br/>
+
 ### [Lesson 5. how to add files in staging area & remove files](https://youtu.be/IDhgZX4esQQ)
 
 1.  adding files to stagging area:
