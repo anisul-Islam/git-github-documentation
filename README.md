@@ -227,6 +227,7 @@ git configuration
       | data1 | data2 |
       | data3 | data4 |
       | data5 | data6 |
+      | data6 | data6 |
    ```
 
 <br>
