@@ -49,6 +49,9 @@ git configuration
 
 - ls -a : list all files inside of a directory
 
+>For windows 
+- dir /a : list all files inside of a directory
+
   ```
   mkdir DIRECTORY_NAME_HERE
   cd DIRECTORY_NAME_HERE
@@ -59,6 +62,12 @@ git configuration
   cd notes
   git init
   ls -a
+
+  Example For Windows Command:
+  mkdir notes
+  cd notes
+  git init
+  dir /a
   ```
 
 2.  adding new files in git folder
@@ -75,6 +84,18 @@ git configuration
   touch day1.txt
   open day1.txt
   write something inside the file
+```
+
+> For Windows Command :   
+
+dir /a  [list all files inside of a directory] 
+
+echo > filename.extension [making new file] 
+
+filename.extension [write file name and hit enter button to open the file]  
+
+write something inside the file
+
   ```
 
 - Git is aware of the file but not added to our git repo
@@ -104,9 +125,9 @@ git configuration
 
 - `git commit -m "message"` move the file to local repository from stagging area
 - `git log` check the commit history
-- `git reset --soft HEAD^` uncommit the commit in HEAD and move to staging area
+- `git reset --soft HEAD~[type number of your commit. example - git reset --soft HEAD~2]` uncommit the commit in HEAD and move to staging area
 - `git reset HEAD^` uncommit the commit in HEAD and move to unstaging / working area
-- `git reset --hard HEAD^` uncommit the commit in HEAD and delete the commit completely with all the changes
+- `git reset --hard HEAD~[type number of your commit. example - git reset --hard HEAD~2]` uncommit the commit in HEAD and delete the commit completely with all the changes
 
 <img src="./images/git-level.png" width="90%">
 
@@ -158,11 +179,12 @@ git configuration
   - `## heading 2 level text is here`
 - bold syntax: `**text goes here**`
 - italic syntax: `_text goes here_`
+-another way italic syntax: `*text goes here*`
 - bold and italic syntax: `**_text goes here_**`
+- bold and italic another way syntax: `***text goes here***`
 - strikethrouh syntax: `~~this is~~`
 - single line code syntax: `` place code inside backticks
-- multiple line code syntax: ``` place code inside three open and closing backticks 
-            
+- multiple line code syntax: ``` place code inside three open and closing backticks        
 - multiple line code syntax language specific: ```html for specific lanaguage use language name when starting; not closing
            
 - Ordered List syntax 
