@@ -314,3 +314,9 @@ write something inside the file
 - https://www.tutorialspoint.com/what-is-merge-conflict-in-git-how-to-handle-merge-conflicts
 
 <br>
+
+# Git push non-fast-forward issue solve
+
+Try this command:
+
+`git pull origin BRANCH-NAME --allow-unrelated-histories`
