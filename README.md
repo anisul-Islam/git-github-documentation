@@ -1,4 +1,4 @@
-# Git & GitHub Documentation
+# Git & GitHub Documentation Edited by Pankaj Kuamr Barman  
 
 ### [Lesson 2. Introduction to git and GitHub](https://youtu.be/ulTs4vqOzyo)
 
