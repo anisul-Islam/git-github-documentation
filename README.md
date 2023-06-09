@@ -1,5 +1,7 @@
 # Git & GitHub Documentation
 
+# my favorite teacher
+
 ### [Lesson 2. Introduction to git and GitHub](https://youtu.be/ulTs4vqOzyo)
 
 1. git?
