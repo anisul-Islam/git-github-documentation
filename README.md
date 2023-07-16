@@ -151,7 +151,9 @@ git configuration
 <br/>
 
 ### [Lesson 13. README.md](https://youtu.be/bl0-DTgh-mw)
+
 [README video is here](https://youtu.be/bl0-DTgh-mw)
+
 - Everything you need to know about README.md is discussed in the video.
 - 6 heading levels: number of hashes define heading levels. check the following examples:
   - `# heading 1 level text is here`
@@ -161,12 +163,10 @@ git configuration
 - bold and italic syntax: `**_text goes here_**`
 - strikethrouh syntax: `~~this is~~`
 - single line code syntax: `` place code inside backticks
-- multiple line code syntax: ``` place code inside three open and closing backticks 
-            
+- multiple line code syntax: ``` place code inside three open and closing backticks
 - multiple line code syntax language specific: ```html for specific lanaguage use language name when starting; not closing
-           
-- Ordered List syntax 
-      
+- Ordered List syntax
+
       ```
            1. HTML
             2. CSS
@@ -177,57 +177,59 @@ git configuration
 
             3. JS
       ```
-- Unordered List syntax -> 
-     ```
-      - html
-      - css
-        - Fundamental
-        - CSS Architecture - BEM
-        - CSS Preprocessor - SASS
-      - js
-     ```
-- Task List 
-   ```
-      - [x] Task1
-      - [x] Task2
-      - [x] Task3
-   ```
-   
+
+- Unordered List syntax ->
+  ```
+   - html
+   - css
+     - Fundamental
+     - CSS Architecture - BEM
+     - CSS Preprocessor - SASS
+   - js
+  ```
+- Task List
+  ```
+     - [x] Task1
+     - [x] Task2
+     - [x] Task3
+  ```
 - adding link
-   ```
-      <!-- automatic link -->
 
-      http://www.studywithanis.com
+  ```
+     <!-- automatic link -->
 
-      <!-- markdown link syntax -->
-      [title](link)
-      [studywithanis](http://www.studywithanis.com)  
-      [studywithanis][websitelink]
+     http://www.studywithanis.com
 
-      <!-- all link is here  -->
+     <!-- markdown link syntax -->
+     [title](link)
+     [studywithanis](http://www.studywithanis.com)
+     [studywithanis][websitelink]
 
-      [websitelink]: http://www.studywithanis.com
+     <!-- all link is here  -->
+
+     [websitelink]: http://www.studywithanis.com
+
+  ```
 
 - adding image syntax -> `![alt text](imageURL)`
-      `![1800 milestone](https://i.postimg.cc/qvZpmxKF/1-800-Uploads-Milestone.png)`
+  `![1800 milestone](https://i.postimg.cc/qvZpmxKF/1-800-Uploads-Milestone.png)`
 
-- adding emoji   
-      [emoji src](https://getemoji.com/)
-      ### Smileys
-      😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔          😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮       😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
+- adding emoji  
+   [emoji src](https://getemoji.com/) ### Smileys
+  😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
 
       ### Gestures and Body Parts
       👋 🤚 🖐 ✋ 🖖 👌 🤌 🤏 ✌️ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕 👇 ☝️ 👍 👎 ✊ 👊 🤛 🤜 👏 🙌 👐 🤲 🤝 🙏 ✍️ 💅 🤳 💪 🦾 🦵 🦿 🦶      👣 👂 🦻 👃 🫀 🫁 🧠 🦷 🦴 👀 👁 👅 👄 💋 🩸
-      
-- adding table 
-   ```
-      table syntax
-      | heading1 | heading2 |
-      | ----- | ----- |
-      | data1 | data2 |
-      | data3 | data4 |
-      | data5 | data6 |
-   ```
+
+- adding table
+  ```
+     table syntax
+     | heading1 | heading2 |
+     | ----- | ----- |
+     | data1 | data2 |
+     | data3 | data4 |
+     | data5 | data6 |
+  ```
 
 <br>
 
@@ -290,5 +292,6 @@ git configuration
 ### [Lesson 21. Merge Conflicts]()
 
 - https://www.tutorialspoint.com/what-is-merge-conflict-in-git-how-to-handle-merge-conflicts
+  My files are added.
 
 <br>
