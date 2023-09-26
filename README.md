@@ -1,6 +1,6 @@
 # Git & GitHub Documentation
 
-### [Lesson 2. Introduction to git and GitHub](https://youtu.be/ulTs4vqOzyo)
+## [Lesson 2. Introduction to git and GitHub](https://youtu.be/ulTs4vqOzyo)
 
 1. git?
    - git is a version control software
@@ -17,15 +17,11 @@
    - Founded in 2008
 
 <img src="./images/git and github.png" width="90%">
-     
-<br/>
 
 ### [Lesson 3. How to set git environment and configuration](https://youtu.be/vj5-nkhTRbo)
 
 - Download and install git on your pc: https://git-scm.com/
 - check git version: open terminal or cmd then use the command `git --version` to find out whether git is installed or not. if git is installed it will return a version number of git.
-
-<br/>
 
 git configuration
 
@@ -151,7 +147,9 @@ git configuration
 <br/>
 
 ### [Lesson 13. README.md](https://youtu.be/bl0-DTgh-mw)
+
 [README video is here](https://youtu.be/bl0-DTgh-mw)
+
 - Everything you need to know about README.md is discussed in the video.
 - 6 heading levels: number of hashes define heading levels. check the following examples:
   - `# heading 1 level text is here`
@@ -161,12 +159,10 @@ git configuration
 - bold and italic syntax: `**_text goes here_**`
 - strikethrouh syntax: `~~this is~~`
 - single line code syntax: `` place code inside backticks
-- multiple line code syntax: ``` place code inside three open and closing backticks 
-            
+- multiple line code syntax: ``` place code inside three open and closing backticks
 - multiple line code syntax language specific: ```html for specific lanaguage use language name when starting; not closing
-           
-- Ordered List syntax 
-      
+- Ordered List syntax
+
       ```
            1. HTML
             2. CSS
@@ -177,57 +173,59 @@ git configuration
 
             3. JS
       ```
-- Unordered List syntax -> 
-     ```
-      - html
-      - css
-        - Fundamental
-        - CSS Architecture - BEM
-        - CSS Preprocessor - SASS
-      - js
-     ```
-- Task List 
-   ```
-      - [x] Task1
-      - [x] Task2
-      - [x] Task3
-   ```
-   
+
+- Unordered List syntax ->
+  ```
+   - html
+   - css
+     - Fundamental
+     - CSS Architecture - BEM
+     - CSS Preprocessor - SASS
+   - js
+  ```
+- Task List
+  ```
+     - [x] Task1
+     - [x] Task2
+     - [x] Task3
+  ```
 - adding link
-   ```
-      <!-- automatic link -->
 
-      http://www.studywithanis.com
+  ```
+     <!-- automatic link -->
 
-      <!-- markdown link syntax -->
-      [title](link)
-      [studywithanis](http://www.studywithanis.com)  
-      [studywithanis][websitelink]
+     http://www.studywithanis.com
 
-      <!-- all link is here  -->
+     <!-- markdown link syntax -->
+     [title](link)
+     [studywithanis](http://www.studywithanis.com)
+     [studywithanis][websitelink]
 
-      [websitelink]: http://www.studywithanis.com
+     <!-- all link is here  -->
+
+     [websitelink]: http://www.studywithanis.com
+
+  ```
 
 - adding image syntax -> `![alt text](imageURL)`
-      `![1800 milestone](https://i.postimg.cc/qvZpmxKF/1-800-Uploads-Milestone.png)`
+  `![1800 milestone](https://i.postimg.cc/qvZpmxKF/1-800-Uploads-Milestone.png)`
 
-- adding emoji   
-      [emoji src](https://getemoji.com/)
-      ### Smileys
-      😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔          😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮       😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
+- adding emoji  
+   [emoji src](https://getemoji.com/) ### Smileys
+  😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
 
       ### Gestures and Body Parts
       👋 🤚 🖐 ✋ 🖖 👌 🤌 🤏 ✌️ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕 👇 ☝️ 👍 👎 ✊ 👊 🤛 🤜 👏 🙌 👐 🤲 🤝 🙏 ✍️ 💅 🤳 💪 🦾 🦵 🦿 🦶      👣 👂 🦻 👃 🫀 🫁 🧠 🦷 🦴 👀 👁 👅 👄 💋 🩸
-      
-- adding table 
-   ```
-      table syntax
-      | heading1 | heading2 |
-      | ----- | ----- |
-      | data1 | data2 |
-      | data3 | data4 |
-      | data5 | data6 |
-   ```
+
+- adding table
+  ```
+     table syntax
+     | heading1 | heading2 |
+     | ----- | ----- |
+     | data1 | data2 |
+     | data3 | data4 |
+     | data5 | data6 |
+  ```
 
 <br>
 
@@ -285,10 +283,28 @@ git configuration
   - https://www.tutorialspoint.com/what-is-3-way-merge-or-merge-commit-in-git
   - https://medium.com/@koteswar.meesala/git-fast-forward-merge-vs-three-way-merge-8591434dd350
 
-<br>
-
 ### [Lesson 21. Merge Conflicts]()
 
 - https://www.tutorialspoint.com/what-is-merge-conflict-in-git-how-to-handle-merge-conflicts
 
-<br>
+### Lesson 22. Tags
+
+In GitHub, "tags" typically refer to Git tags. Git tags are a way to mark specific points in a Git repository's history as being important or significant. They are often used to label specific commits, such as releases or version numbers, to make it easier to reference those commits in the future.
+
+Here's how Git tags work:
+
+1. **Creating a Tag:** You can create a Git tag by running a command like `git tag <tag-name>`, where `<tag-name>` is the name you want to give to the tag. For example, you might create a tag for a release like this: `git tag v1.0.0`.
+
+2. **Tagging Commits:** Tags are typically associated with specific commits. When you create a tag, it's linked to the current commit, but you can also specify a different commit if needed.
+
+3. **Listing Tags:** You can list all the tags in a Git repository using the `git tag` command.
+
+4. **Annotated vs. Lightweight Tags:** Git supports two types of tags: annotated and lightweight. Annotated tags are recommended for most use cases because they store extra metadata like the tagger's name, email, date, and a tagging message. Lightweight tags are just a name for a specific commit and don't include extra information.
+
+5. **Pushing Tags:** By default, when you push changes to a remote Git repository, tags are not automatically pushed. You need to use `git push --tags` to push tags to a remote repository. This is important when you want to share tags, especially when creating releases on GitHub.
+
+6. **Using Tags on GitHub:** On GitHub, you'll often see tags associated with releases. When you create a release on GitHub, it typically creates a Git tag behind the scenes to mark the specific commit associated with that release. Users can then download or reference that release by its tag name.
+
+GitHub also has its own concept of "releases" that are closely related to Git tags. A release on GitHub is a way to package and distribute software versions, and it often corresponds to a Git tag. When you create a GitHub release, you can upload release assets (e.g., binaries, documentation) and provide release notes.
+
+In summary, GitHub tags are essentially Git tags, and they are used to mark important points in a repository's history, often associated with releases or significant commits. They help users easily reference and work with specific versions of a project.
