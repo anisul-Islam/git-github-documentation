@@ -20,6 +20,11 @@
 
 ### [Lesson 3. How to set git environment and configuration](https://youtu.be/vj5-nkhTRbo)
 
+- create a GitHub account
+- [setup ssh](https://youtu.be/ykLd4YQMzCo?si=hS4bShi16XfD4n5y) :
+  - type in terminal `for generating SSH Key: ssh-keygen -t ed25519 -C "your email goes here"`
+  - type in terminal `cat ~/.ssh/id_ed255519.pub`
+  - copy the ssh and add to github
 - Download and install git on your pc: https://git-scm.com/
 - check git version: open terminal or cmd then use the command `git --version` to find out whether git is installed or not. if git is installed it will return a version number of git.
 
