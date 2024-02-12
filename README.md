@@ -252,7 +252,9 @@ git configuration
 
 ### [Lesson 16. branching and merging](https://youtu.be/3k8Bq_usPsk)
 
-- Branch is a new and separate branch of master/main repository
+- Branch is a new and separate branch of the master/main repository, which allows you parallel development.
+- Branching allows you to diverge from the main line of development and continue working on a separate line of code without affecting the main codebase. When you create a branch, you essentially create a copy of the code at a certain point in time, and you can make changes to this copy independently of other branches. Branches are often used for developing new features, fixing bugs, or experimenting with changes.
+- Merging is the process of combining the changes from one branch (the source branch) into another (the target branch). This allows you to incorporate the changes made in one branch back into the main codebase or another branch. When you merge branches, Git automatically integrates the changes, resolving any conflicts that may arise if the same part of the code was modified in both branches.
 - create a branch `git branch branch_name`
 - List branches `git branch`
 - List all remote branches `git branch -r`
