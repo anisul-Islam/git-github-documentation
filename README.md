@@ -315,3 +315,6 @@ Here's how Git tags work:
 GitHub also has its own concept of "releases" that are closely related to Git tags. A release on GitHub is a way to package and distribute software versions, and it often corresponds to a Git tag. When you create a GitHub release, you can upload release assets (e.g., binaries, documentation) and provide release notes.
 
 In summary, GitHub tags are essentially Git tags, and they are used to mark important points in a repository's history, often associated with releases or significant commits. They help users easily reference and work with specific versions of a project.
+
+### git revert
+In Git, git revert is a command used to create a new commit that undoes the changes made by a previous commit. This command is helpful when you want to revert specific changes without altering the commit history.
