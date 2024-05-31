@@ -28,7 +28,7 @@
     - [4.1 Create github repository and commits](#41-create-github-repository-and-commits)
     - [4.2 Connecting local repo to remote repo](#42-connecting-local-repo-to-remote-repo)
     - [4.3 Push and Pull](#43-push-and-pull)
-    - [4.4 Working with Remotes => need video](#44-working-with-remotes--need-video)
+    - [4.4 Working with Remotes](#44-working-with-remotes)
     - [4.5 README.md](#45-readmemd)
     - [4.6 GitHub Issues => create video](#46-github-issues--create-video)
 
@@ -40,7 +40,8 @@
     - [2.2 Basic commands for branching & merging](#22-basic-commands-for-branching--merging)
     - [2.3 Types of Merges: 2-way and 3-way merges](#23-types-of-merges-2-way-and-3-way-merges)
     - [2.4 Resolve Merge Conflicts](#24-resolve-merge-conflicts)
-    - [2.5 git merge vs git rebase](#25-git-merge-vs-git-rebase)
+    - [2.5 best practice (create video)](#25-best-practice-create-video)
+    - [2.6 git merge vs git rebase](#26-git-merge-vs-git-rebase)
   - [3 Advanced Git Commands (stash and tag) => create video](#3-advanced-git-commands-stash-and-tag--create-video)
     - [3.1 Git Stash](#31-git-stash)
     - [3.2 Git Tags](#32-git-tags)
@@ -521,7 +522,7 @@ The key's randomart image is:
 - push all branches `git push --all`
 - pull from a repo: `git pull` which is equivalent to git fetch + git merge
 
-#### [4.4 Working with Remotes => need video]
+#### 4.4 Working with Remotes
 
 Working with remotes in Git involves interacting with repositories hosted on a remote server. These remote repositories can be on platforms like GitHub, GitLab, Bitbucket, or your own server. Here are key concepts and commands for working with remotes:
 
@@ -1111,7 +1112,104 @@ These commands provide powerful ways to undo changes in Git, but they should be 
 
 ###### resolve merge conflict on Github
 
-##### 2.5 git merge vs git rebase
+##### 2.5 best practice (create video)
+
+When working on a feature such as a navbar for a website using Git, it's important to follow a structured workflow to ensure that your changes are organized, traceable, and integrated smoothly into the main project. Here's a typical working process you can follow:
+
+- Working Process on Git for a Navbar Feature
+
+###### 1. **Set Up Your Environment**
+
+Ensure that you have a local copy of the repository and are on the latest version of the `main` branch.
+
+```bash
+# Clone the repository if you haven't already
+git clone https://github.com/yourusername/yourrepository.git
+
+# Navigate into the project directory
+cd yourrepository
+
+# Fetch the latest changes from the remote repository
+git fetch origin
+
+# Checkout the main branch
+git checkout main
+
+# Pull the latest changes
+git pull origin main
+```
+
+###### 2. **Create a New Branch for the Feature**
+
+Create a new branch specifically for the navbar feature. This keeps your work isolated and makes it easier to manage changes.
+
+```bash
+# Create and switch to a new branch for the navbar feature
+git checkout -b feature/navbar
+```
+
+###### 3. **Develop the Feature**
+
+Work on the navbar feature in your local environment. Make sure to commit your changes incrementally with clear and descriptive messages.
+
+```bash
+# Stage changes for the navbar HTML structure
+git add index.html
+git commit -m "Add basic HTML structure for the navbar"
+
+# Stage changes for the navbar styling
+git add styles/navbar.css
+git commit -m "Add CSS styling for the navbar"
+
+# Stage changes for the navbar JavaScript
+git add scripts/navbar.js
+git commit -m "Add JavaScript functionality for the navbar"
+```
+
+###### 4. **Regularly Sync with the Main Branch**
+
+To avoid conflicts and keep your branch up to date with the main branch, regularly fetch and merge changes from the main branch.
+
+```bash
+# Fetch the latest changes from the remote repository
+git fetch origin
+
+# Switch to the main branch
+git checkout main
+
+# Pull the latest changes
+git pull origin main
+
+# Switch back to your feature branch
+git checkout feature/navbar
+
+# Merge the latest changes from the main branch into your feature branch
+git merge main
+```
+
+###### 5. **Test Your Changes**
+
+Thoroughly test the navbar feature in your local environment to ensure it works as expected and does not introduce any bugs.
+
+###### 6. **Push Your Feature Branch to the Remote Repository**
+
+Once you are satisfied with your changes, push your feature branch to the remote repository.
+
+```bash
+# Push your feature branch to the remote repository
+git push origin feature/navbar
+```
+
+###### 7. **Create a Pull Request (PR)**
+
+Open a pull request on the remote repository to merge your feature branch into the main branch. Provide a clear description of the changes and any related information.
+
+1. Go to your repository on GitHub (or your Git hosting service).
+2. Click on the "Pull Requests" tab.
+3. Click on "New Pull Request".
+4. Select `feature/navbar` as the
+
+##### 2.6 git merge vs git rebase
 
 ### [3 Advanced Git Commands (stash and tag) => create video]
 
