@@ -19,9 +19,10 @@
 
     - [3.1 Git repo and adding files](#31-git-repo-and-adding-files)
     - [3.2 Git staging area](#32-git-staging-area)
-    - [3.3 Git commit & uncommit](#33-git-commit--uncommit)
+    - [3.3 Git commit & uncommit](#33-git-commit--uncommit-best-practices-for-commit)
     - [3.4 Basic Commands & workflow](#34-basic-commands--workflow)
     - [3.5 Git ignore](#35-git-ignore)
+    - [3.6 Git rm](#36-git-rm)
 
   - [4. GitHub Basics & Collaborating with Git](#4-github-basics--collaborating-with-git)
 
@@ -45,6 +46,7 @@
   - [3 Advanced Git Commands (stash and tag) => create video](#3-advanced-git-commands-stash-and-tag--create-video)
     - [3.1 Git Stash](#31-git-stash)
     - [3.2 Git Tags](#32-git-tags)
+    - [3.3 Git Squash](#33-git-squash)
   - [4. GitHub Advanced Features => Create Video](#4-github-advanced-features--create-video)
 
 - [Advanced Part](#advanced-part)
@@ -159,7 +161,11 @@ echo text / Write-Output text / echo text
 
 #### 2.4 Git configuration and aliases
 
-`git config --global -e` => to edit git configuration.
+run the following command in your terminal:
+
+`git config --global core.editor "code --wait"`
+
+Now when you run git commit or git -config --global -e it will open the Git editor within a file in VS Code.
 
 Git configuration is an important part of setting up and managing your Git environment. Configuration settings in Git can be set at three different levels: local, global, and system.
 
@@ -464,7 +470,7 @@ The key's randomart image is:
 
 #### [practice-1](https://youtu.be/jSj-GF-utls)
 
-#### [3.3 Git commit & uncommit](https://youtu.be/gmBKbxKGcn8)
+#### [3.3 Git commit & uncommit, best practices for commit](https://youtu.be/gmBKbxKGcn8)
 
 - `git commit -m "message"` move the file to local repository from stagging area
 - `git log` check the commit history
@@ -472,23 +478,31 @@ The key's randomart image is:
 - `git reset HEAD^` uncommit the commit in HEAD and move to unstaging / working area
 - `git reset --hard HEAD^` uncommit the commit in HEAD and delete the commit completely with all the changes
 
-##### Best Practices for Git Commits
+##### [Best Practices for Git Commits](https://www.freecodecamp.org/news/git-best-practices-commits-and-code-reviews/)
+
+###### bad commit: added feature, fixed bug, fixed previous commit
 
 Making effective commits is essential for maintaining a clean, understandable project history. Here are some best practices to follow:
 
-###### 1. **Write Clear and Concise Commit Messages**
+###### 1. **Write Clear, meaningful and Concise (clearn in a few words) Commit Messages**
 
 - **Subject Line**: A short summary of the changes (50 characters or less).
-- **Body** (optional): A detailed explanation of the changes, if necessary (72 characters per line). **Prefix your commit messages with imperative commands such as: fix, refactor, add, and remove.**
-- **Example**:
+- **Body** (optional): A detailed explanation of the changes, if necessary (72 characters per line).
+- **Use the Imperative Mood in Commit Messages**: Prefix your commit messages with imperative commands such as: fix, refactor, add, and remove. Write commit messages as if you are giving an order. For example, use "Add feature" instead of "Added feature".
 
-     ```
-     Add user login feature
+- `git commit -m "Add user login feature" -m " - Implement login endpoint" -m " - Validate user credentials" -m " - Return JWT token on successful login"`
+      - -m "Add user login feature": This is your commit message, a concise summary of the changes.
+      - -m " - Implement login endpoint", -m " - Validate user credentials", -m " - Return JWT token on successful login": These are the lines of your detailed description, each prefixed with a dash and a space for proper formatting.
+      - **output**:
 
-     - Implement login endpoint
-     - Validate user credentials
-     - Return JWT token on successful login
-     ```
+      ```txt
+      
+      Add user login feature
+
+      - Implement login endpoint
+      - Validate user credentials
+      - Return JWT token on successful login
+      ```
 
 ###### 2. **Make Atomic Commits**
 
@@ -498,11 +512,7 @@ Making effective commits is essential for maintaining a clean, understandable pr
 
 - Commit frequently to save your work and document your progress. However, avoid making trivial commits that do not add value.
 
-###### 4. **Use Meaningful Commit Messages**
-
-- Avoid generic messages like "fix", "update", or "changes". Instead, describe what was fixed or updated and why.
-
-###### 5. **Reference Issues and Pull Requests**
+###### 4. **Reference Issues and Pull Requests**
 
 - If your commit relates to an issue or pull request, reference it in the commit message.
 - **Example**:
@@ -513,23 +523,15 @@ Making effective commits is essential for maintaining a clean, understandable pr
      Closes #123
      ```
 
-###### 6. **Use the Imperative Mood in Commit Messages**
-
-- Write commit messages as if you are giving an order. For example, use "Add feature" instead of "Added feature".
-
-###### 7. **Stage Changes Selectively**
-
-- Use `git add -p` or `git add --patch` to review and stage changes selectively, ensuring only relevant changes are included in a commit.
-
-###### 8. **Test Before Committing**
+###### 5. **Test Before Committing**
 
 - Ensure your code works and passes all tests before making a commit. This helps maintain the integrity of the codebase.
 
-###### 9. **Avoid Committing Generated Files**
+###### 6. **Avoid Committing Generated Files**
 
 - Do not commit files that are generated by the build process or your development environment (e.g., `node_modules`, `dist`, `.log` files). Use `.gitignore` to exclude these files.
 
-###### 10. **Sign Your Commits**
+###### 7. **Sign Your Commits**
 
 - For security and authenticity, consider signing your commits using GPG.
 - **Example**:
@@ -612,6 +614,111 @@ By following these best practices, you ensure that your commit history is clean,
 - `!main.txt` ignore all files with .txt extension without .main.txt
 - `test?.txt` ignore all files like test1.txt test2.txt
 - `temp/` all the files in temp folders will be ignored
+
+#### [3.6 Git rm]
+
+The `git rm` command is used to remove files from the working directory and the staging area (index). This command is helpful when you need to delete a file and have that deletion tracked by Git so that the file is removed in future commits.
+
+##### Basic Usage
+
+1. **Remove a File and Stage the Deletion**:
+
+    ```bash
+    git rm <file>
+    ```
+
+    This command removes the specified file from the working directory and stages the removal for the next commit.
+
+2. **Remove a File from Only the Staging Area**:
+
+    ```bash
+    git rm --cached <file>
+    ```
+
+    This command removes the specified file from the staging area, but leaves the file in the working directory. This is useful if you want to stop tracking the file but not delete it from your filesystem.
+
+3. **Remove a File and Force the Deletion**:
+
+    ```bash
+    git rm -f <file>
+    ```
+
+    This command forces the removal of the file from both the working directory and the staging area, even if the file has changes that haven't been committed.
+
+4. **Remove a Directory Recursively**:
+
+    ```bash
+    git rm -r <directory>
+    ```
+
+    This command removes the specified directory and all of its contents (files and subdirectories) recursively.
+
+##### Examples
+
+###### Example 1: Basic File Removal
+
+1. **Create a File**:
+
+    ```bash
+    echo "Hello World" > hello.txt
+    git add hello.txt
+    git commit -m "Add hello.txt"
+    ```
+
+2. **Remove the File**:
+
+    ```bash
+    git rm hello.txt
+    git commit -m "Remove hello.txt"
+    ```
+
+    This sequence of commands creates a file, stages and commits it, then removes the file and stages the removal for the next commit.
+
+###### Example 2: Untrack a File without Deleting It
+
+1. **Create a File**:
+
+    ```bash
+    echo "Temporary data" > temp.txt
+    git add temp.txt
+    git commit -m "Add temp.txt"
+    ```
+
+2. **Stop Tracking the File**:
+
+    ```bash
+    git rm --cached temp.txt
+    git commit -m "Stop tracking temp.txt"
+    ```
+
+    This sequence of commands creates a file, stages and commits it, then stops tracking the file in the repository but keeps it in the working directory.
+
+###### Example 3: Force Remove a Modified File
+
+1. **Modify a File**:
+
+    ```bash
+    echo "New content" >> existing.txt
+    ```
+
+2. **Force Remove the Modified File**:
+
+    ```bash
+    git rm -f existing.txt
+    git commit -m "Force remove existing.txt"
+    ```
+
+    This sequence of commands modifies a file, then forcefully removes it and stages the removal for the next commit, ignoring any uncommitted changes.
+
+##### Notes
+
+- **Safety**: `git rm` is a safe way to delete files because it ensures that the deletion is tracked by Git, preventing future confusion about missing files.
+- **Untracked Files**: If a file is untracked (not staged or committed), `git rm` will not remove it. You can use regular shell commands to delete untracked files.
+- **Removing Directories**: When removing directories, the `-r` (recursive) option is required to delete all contents within the directory.
+
+##### Summary for git rm
+
+The `git rm` command is essential for managing file deletions in a Git repository. It ensures that file removals are tracked and can be committed, providing a clear history of changes within the project.
 
 ### [4. GitHub Basics & Collaborating with Git]
 
@@ -998,7 +1105,7 @@ Each issue serves as a discussion thread where collaborators can comment, provid
 - **Transparency:** The status and progress of issues are visible to all project collaborators.
 - **Efficient Workflow:** Issues integrate seamlessly with other GitHub features like pull requests and project boards, making it easier to manage the development lifecycle.
 
-##### Best Practices
+##### Best Practices for github issues
 
 - **Use Descriptive Titles and Descriptions:** Ensure issues are clear and concise.
 - **Label Appropriately:** Use labels to categorize and prioritize issues.
@@ -1012,7 +1119,16 @@ GitHub Issues is a versatile tool that enhances project management and collabora
 
 ### [1 Undoing Changes - checkout, reset, revert](need videos)
 
+**Undo: git revert, git checkout, git reset, git clean, git rm**
 Undoing changes in Git can be done in several ways, depending on what you need to achieve. Here are some common scenarios and the Git commands you can use to undo changes:
+
+#### git reset
+
+```sh
+git reset --soft <commitId> (commit to stagging)
+git reset <commitId> (commit to unstaged)
+git reset --hard <commitId> (commit to discard from working directory)
+```
 
 #### 1. Undoing Uncommitted Changes
 
@@ -1194,6 +1310,8 @@ These commands provide powerful ways to undo changes in Git, but they should be 
 
 ### [2. Branching and Merging](https://youtu.be/3k8Bq_usPsk)
 
+- [practice branching and merging here](https://git-school.github.io/visualizing-git/)
+
 #### 2.1 What is Branching & Merging?
 
 - Branch is a new and separate branch of the master/main repository, which allows you parallel development.
@@ -1331,7 +1449,214 @@ Open a pull request on the remote repository to merge your feature branch into t
 3. Click on "New Pull Request".
 4. Select `feature/navbar` as the
 
-##### 2.6 git merge vs git rebase
+##### 2.6 [git merge vs git rebase](https://www.youtube.com/watch?v=CRlGDDprdOQ&ab_channel=Academind)
+
+Both `git merge` and `git rebase` are used to integrate changes from one branch into another, but they do so in different ways. Understanding the difference between these two commands is crucial for managing your project's history effectively.
+
+###### Git Merge
+
+**Git merge** combines the contents of two branches, creating a new commit that represents the merge.
+
+- **How it works**:
+  - When you merge one branch into another, Git creates a new "merge commit" that includes the histories of both branches.
+  - This preserves the history of the original branches, showing exactly when and where the branches diverged and were subsequently merged.
+
+**Example**:
+
+```bash
+# Assuming you are on branch "feature" and want to merge "main" into it
+git checkout feature
+git merge main
+```
+
+**Advantages**:
+
+1. **Preserves History**: Shows the full history of all branches, including where they diverged and merged.
+2. **Clear Merge Points**: Makes it easy to see when branches were merged.
+
+**Disadvantages**:
+
+1. **Messy History**: The commit history can become cluttered with merge commits, especially in active projects with many branches.
+2. **Conflicts**: Conflicts may still arise and need to be resolved, just as with rebase.
+
+###### Git Rebase
+
+**Git rebase** moves or "replays" commits from one branch onto another.
+
+- **How it works**:
+  - Rebasing rewrites the commit history by creating new commits for each commit in the original branch, but based on the tip of the target branch.
+  - It effectively makes it look as if the commits in the original branch were created on top of the commits in the target branch.
+
+**Example**:
+
+```bash
+# Assuming you are on branch "feature" and want to rebase onto "main"
+git checkout feature
+git rebase main
+```
+
+**Advantages**:
+
+1. **Cleaner History**: The commit history is linear and easier to follow, with no merge commits cluttering the history.
+2. **Bisecting**: Easier to use `git bisect` and other debugging tools because the history is simpler.
+
+**Disadvantages**:
+
+1. **Rewrites History**: Rewriting history can be dangerous if not used carefully, especially if the branch has been shared with others.
+2. **Complex Conflicts**: Conflicts can still occur and may need to be resolved multiple times during the rebase process.
+
+###### Use Cases
+
+**When to Use Merge**:
+
+1. **Preserve History**: When you want to maintain a complete history of branch merges.
+2. **Collaborative Workflows**: When working with multiple collaborators, as it’s safer to merge branches that others may be working on.
+
+**When to Use Rebase**:
+
+1. **Clean History**: When you want a cleaner, linear commit history.
+2. **Local Changes**: When you are working on local changes that haven’t been pushed to a shared repository yet.
+
+###### Example Workflow
+
+**Using Merge**:
+
+1. **Create Feature Branch**:
+
+    ```bash
+    git checkout -b feature
+    ```
+
+2. **Work on Feature**:
+
+    ```bash
+    git add .
+    git commit -m "Work on feature"
+    ```
+
+3. **Merge Main into Feature**:
+
+    ```bash
+    git checkout main
+    git pull
+    git checkout feature
+    git merge main
+    ```
+
+**Using Rebase**:
+
+1. **Create Feature Branch**:
+
+    ```bash
+    git checkout -b feature
+    ```
+
+2. **Work on Feature**:
+
+    ```bash
+    git add .
+    git commit -m "Work on feature"
+    ```
+
+3. **Rebase Feature onto Main
+**Using Rebase (continued)**:
+
+3. **Rebase Feature onto Main**:
+
+    ```bash
+    git checkout main
+    git pull
+    git checkout feature
+    git rebase main
+    ```
+
+   During the rebase process, if there are conflicts, Git will pause and allow you to resolve them. After resolving the conflicts, you would continue the rebase:
+
+    ```bash
+    git add <resolved_files>
+    git rebase --continue
+    ```
+
+4. **Complete Rebase and Push Changes**:
+    Once the rebase is complete and all conflicts are resolved, you can push your rebased feature branch:
+
+    ```bash
+    git push -f origin feature
+    ```
+
+   **Note**: The `-f` (force) option is required because rebase rewrites commit history, and Git will reject the push to prevent potential overwrites unless you force it.
+
+##### Practical Example of Merge vs. Rebase
+
+Consider the following scenario where `main` has a linear commit history, and `feature` has diverged with additional commits.
+
+###### Merge Example
+
+1. Start with two branches:
+
+    ```bash
+    git checkout -b main
+    # Make some commits on main
+    git checkout -b feature
+    # Make some commits on feature
+    ```
+
+2. Merge `main` into `feature`:
+
+    ```bash
+    git checkout main
+    git pull
+    git checkout feature
+    git merge main
+    ```
+
+   Resulting history:
+
+   ```
+   *   Merge branch 'main' into feature
+   |\
+   | * Commit on main
+   | * Another commit on main
+   * | Commit on feature
+   * | Another commit on feature
+   |/
+   * Initial commit
+   ```
+
+###### Rebase Example
+
+1. Start with the same two branches:
+
+    ```bash
+    git checkout -b main
+    # Make some commits on main
+    git checkout -b feature
+    # Make some commits on feature
+    ```
+
+2. Rebase `feature` onto `main`:
+
+    ```bash
+    git checkout main
+    git pull
+    git checkout feature
+    git rebase main
+    ```
+
+   Resulting history:
+
+   ```
+   * Commit on feature
+   * Another commit on feature
+   * Commit on main
+   * Another commit on main
+   * Initial commit
+   ```
+
+- **Git Merge**: Combines branches by creating a merge commit, preserving the history of all commits and branches.
+- **Git Rebase**: Moves the base of a branch to a new starting point, creating a linear history but rewriting commit history.
+
+Both commands are powerful tools for managing branches and commits in Git. Choosing the right one depends on your project's workflow and how you prefer to manage your commit history. Merge is typically used for preserving a detailed history of branch merges, while rebase is used for creating a cleaner, linear history.
 
 ### [3 Advanced Git Commands (stash and tag) => create video]
 
@@ -1343,6 +1668,163 @@ Open a pull request on the remote repository to merge your feature branch into t
 - git remote
 
 #### 3.1 Git Stash
+
+- git stash is a powerful command that allows you to temporarily save changes in your working directory that you don't want to commit yet. This can be especially useful when you need to switch branches or pull in changes from a remote branch but your working directory isn't clean (i.e., it has modifications).
+
+##### How `git stash` Works
+
+When you run `git stash`, Git takes your uncommitted changes (both staged and unstaged) and saves them on a stack of unfinished changes that you can reapply at any time.
+
+##### Common Git Stash Commands
+
+1. **Save Changes to Stash**:
+
+    ```bash
+    git stash
+    ```
+
+    This command stashes both tracked (staged and unstaged) changes.
+
+2. **Apply Stashed Changes**:
+
+    ```bash
+    git stash apply
+    ```
+
+    This command reapplies the most recently stashed changes but keeps them in the stash.
+
+3. **Apply and Remove Stashed Changes**:
+
+    ```bash
+    git stash pop
+    ```
+
+    This command reapplies the most recently stashed changes and removes them from the stash.
+
+4. **List Stashed Changes**:
+
+    ```bash
+    git stash list
+    ```
+
+    This command shows a list of all stashed changes.
+
+5. **Show Stashed Changes**:
+
+    ```bash
+    git stash show
+    ```
+
+    This command shows a summary of changes in the most recent stash.
+
+6. **Show Detailed Stashed Changes**:
+
+    ```bash
+    git stash show -p
+    ```
+
+    This command shows a detailed diff of changes in the most recent stash.
+
+7. **Stash Changes with a Message**:
+
+    ```bash
+    git stash save "message"
+    ```
+
+    This command allows you to stash changes with a custom message.
+
+8. **Apply a Specific Stash**:
+
+    ```bash
+    git stash apply stash@{2}
+    ```
+
+    This command applies the changes from a specific stash.
+
+9. **Drop a Specific Stash**:
+
+    ```bash
+    git stash drop stash@{2}
+    ```
+
+    This command deletes a specific stash.
+
+10. **Clear All Stashes**:
+
+    ```bash
+    git stash clear
+    ```
+
+    This command deletes all stashes.
+
+##### Example Scenario
+
+##### Scenario: Stashing Changes to Switch Branches
+
+1. **Make Changes in Your Working Directory**:
+
+    ```bash
+    echo "Some changes" >> file.txt
+    git add file.txt
+    ```
+
+2. **Stash the Changes**:
+
+    ```bash
+    git stash
+    ```
+
+    Output:
+
+    ```
+    Saved working directory and index state WIP on main: 1234567 Initial commit
+    ```
+
+3. **Verify the Stash**:
+
+    ```bash
+    git stash list
+    ```
+
+    Output:
+
+    ```
+    stash@{0}: WIP on main: 1234567 Initial commit
+    ```
+
+4. **Switch to Another Branch**:
+
+    ```bash
+    git checkout other-branch
+    ```
+
+5. **Make Changes and Commit on the Other Branch**:
+
+    ```bash
+    echo "Work on other branch" >> other-file.txt
+    git add other-file.txt
+    git commit -m "Work on other branch"
+    ```
+
+6. **Switch Back to the Original Branch**:
+
+    ```bash
+    git checkout main
+    ```
+
+7. **Reapply Stashed Changes**:
+
+    ```bash
+    git stash pop
+    ```
+
+    Output:
+
+    ```
+    Auto-merging file.txt
+    Dropped refs/stash@{
+
+- 
 
 #### 3.2 Git Tags
 
@@ -1365,6 +1847,56 @@ Here's how Git tags work:
 GitHub also has its own concept of "releases" that are closely related to Git tags. A release on GitHub is a way to package and distribute software versions, and it often corresponds to a Git tag. When you create a GitHub release, you can upload release assets (e.g., binaries, documentation) and provide release notes.
 
 In summary, GitHub tags are essentially Git tags, and they are used to mark important points in a repository's history, often associated with releases or significant commits. They help users easily reference and work with specific versions of a project.
+
+#### 3.3 Git squash
+
+**Git squash** is a process of combining multiple commits into a single commit. This is often done to clean up a commit history before merging into a main branch, making the commit history easier to understand and manage.
+
+##### Why Squash Commits?
+
+1. **Clean History**: It helps to create a cleaner and more readable commit history.
+2. **Logical Grouping**: Combines related changes into a single commit, which can make it easier to understand the context of changes.
+3. **Reduced Noise**: Removes unnecessary commits, such as those with minor changes or fixes, that clutter the commit history.
+
+##### How to Squash Commits
+
+You can squash commits using the interactive rebase feature in Git.
+
+##### Example: Squashing the Last 3 Commits
+
+1. **Start Interactive Rebase**:
+
+    ```bash
+    git rebase -i HEAD~3
+    ```
+
+    This command will open an editor with a list of the last 3 commits.
+
+2. **Mark Commits to be Squashed**:
+    - In the editor, you'll see something like this:
+
+        ```
+        pick abcdef1 Commit message 1
+        pick abcdef2 Commit message 2
+        pick abcdef3 Commit message 3
+        ```
+
+    - Change `pick` to `squash` (or `s`) for the commits you want to squash:
+
+        ```
+        pick abcdef1 Commit message 1
+        squash abcdef2 Commit message 2
+        squash abcdef3 Commit message 3
+        ```
+
+3. **Save and Exit the Editor**:
+    - After marking the commits, save and close the editor. Git will then combine the commits.
+
+4. **Edit Commit Message**:
+    - Another editor window will appear, allowing you to edit the commit message for the squashed commit. You can combine the commit messages or create a new one.
+    - Save and close the editor to complete the rebase.
+
+Git squash is a powerful technique to streamline commit history, making it easier to review and understand. By using interactive rebase, you can squash multiple commits into one, ensuring your project history remains clean and meaningful.
 
 ### 4. GitHub Advanced Features => Create Video
 
