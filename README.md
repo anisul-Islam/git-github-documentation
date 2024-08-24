@@ -1358,6 +1358,8 @@ These commands provide powerful ways to undo changes in Git, but they should be 
 
 ##### 2.5 best practice when merging and branching
 
+![alt text](image.png)
+
 When working on a feature such as a navbar for a website using Git, it's important to follow a structured workflow to ensure that your changes are organized, traceable, and integrated smoothly into the main project. Here's a typical working process you can follow:
 
 - Working Process on Git for a Navbar Feature
@@ -1588,7 +1590,9 @@ Your PR has been merged into the `main` branch (or any other target branch). Now
 
 By reverting the merge commit, you ensure that the problematic changes are undone while maintaining a clear and accurate history in your Git repository.
 
-##### 2.6 [git merge vs git rebase](https://www.youtube.com/watch?v=CRlGDDprdOQ&ab_channel=Academind)
+##### 2.6 [git merge vs git rebase vs git squash]
+
+![alt text](image-1.png)
 
 Both `git merge` and `git rebase` are used to integrate changes from one branch into another, but they do so in different ways. Understanding the difference between these two commands is crucial for managing your project's history effectively.
 
