@@ -41,7 +41,7 @@
     - [2.2 Basic commands for branching & merging](#22-basic-commands-for-branching--merging)
     - [2.3 Types of Merges: 2-way and 3-way merges](#23-types-of-merges-2-way-and-3-way-merges)
     - [2.4 Resolve Merge Conflicts](#24-resolve-merge-conflicts)
-    - [2.5 best practice (create video)](#25-best-practice-create-video)
+    - [2.5 best practices for branching, merging and PR)](#25-best-practice-when-merging-and-branching)
     - [2.6 git merge vs git rebase](#26-git-merge-vs-git-rebase)
   - [3 Advanced Git Commands (stash and tag) => create video](#3-advanced-git-commands-stash-and-tag--create-video)
     - [3.1 Git Stash](#31-git-stash)
@@ -226,6 +226,12 @@ To set system configuration options (requires administrative privileges):
 sudo git config --system core.editor "nano"
 ```
 
+To set system configuration to default:
+
+```bash
+sudo git config --system core.editor "code --wait"
+```
+
 ##### Common Configuration Options
 
 Here are some commonly used Git configuration options:
@@ -242,7 +248,7 @@ Here are some commonly used Git configuration options:
    - Set the default text editor for Git.
 
    ```bash
-   git config --global core.editor "nano"  # or "vim", "code --wait", etc.
+   git config --global core.editor "nano"  # or "vim", "code --wait" (default), etc.
    ```
 
 3. **Line Endings**
@@ -1220,8 +1226,6 @@ git reset --hard <commit>
 git push --force
 ```
 
-##### Practical Examples
-
 ###### Example 1: Undo Uncommitted Changes in a File
 
 1. Modify a file (`example.txt`).
@@ -1303,7 +1307,7 @@ git commit -m "Commit 3"
 2. Reset to the first commit.
 
 ```bash
-git reset --hard HEAD~2
+git reset --hard HEAD~2 or git reset --hard <commitId>
 ```
 
 These commands provide powerful ways to undo changes in Git, but they should be used carefully, especially when working with shared repositories, to avoid disrupting other collaborators.
@@ -1352,7 +1356,7 @@ These commands provide powerful ways to undo changes in Git, but they should be 
 
 ###### resolve merge conflict on Github
 
-##### 2.5 best practice (create video)
+##### 2.5 best practice when merging and branching
 
 When working on a feature such as a navbar for a website using Git, it's important to follow a structured workflow to ensure that your changes are organized, traceable, and integrated smoothly into the main project. Here's a typical working process you can follow:
 
@@ -1448,6 +1452,141 @@ Open a pull request on the remote repository to merge your feature branch into t
 2. Click on the "Pull Requests" tab.
 3. Click on "New Pull Request".
 4. Select `feature/navbar` as the
+
+##### How to fix the commit that created a bug before merging PR
+
+Suppose you're working on a branch called `feature-branch` and you made a commit that introduced a bug. You realize the mistake after pushing the branch to the remote repository, but before creating the PR. You want to revert that commit before proceeding with the PR.
+
+- Step-by-Step Example
+
+1. **Check the Commit History**
+   First, identify the commit you want to revert by checking the commit history.
+
+   ```bash
+   git log --oneline
+   ```
+
+   Let's say the commit history looks like this:
+
+   ```
+   e5d2c3f Bug fix for incorrect calculation
+   b3d9a7e Implement new feature
+   7a8b9d1 Initial commit
+   ```
+
+   Here, `e5d2c3f` is the commit that introduced the bug.
+
+2. **Revert the Commit**
+   Use `git revert` to create a new commit that undoes the changes from the faulty commit.
+
+   ```bash
+   git revert e5d2c3f
+   ```
+
+   This command will open your default editor to allow you to write a commit message for the revert. By default, the message will be something like "Revert 'Bug fix for incorrect calculation'". Save and close the editor.
+
+3. **Push the Reverted Commit**
+   Now, push the changes to the remote repository.
+
+   ```bash
+   git push origin feature-branch
+   ```
+
+   Your commit history will now look like this:
+
+   ```
+   2f3a4b6 Revert "Bug fix for incorrect calculation"
+   e5d2c3f Bug fix for incorrect calculation
+   b3d9a7e Implement new feature
+   7a8b9d1 Initial commit
+   ```
+
+   The commit `2f3a4b6` undoes the changes made in `e5d2c3f`.
+
+4. **Create the Pull Request**
+   After pushing, you can create a PR as usual. The PR will include the revert commit, which will effectively undo the faulty changes in the codebase when merged.
+
+###### Why Use `git revert` Before a PR?
+
+- **Safety**: If your branch is already pushed to the remote repository, `git revert` is safe because it doesn't rewrite history.
+- **Clarity**: The revert commit clearly documents that a specific change was undone, making the history easier to understand for others reviewing the PR.
+- **Traceability**: Future developers can see both the original change and its reversal, along with the reasons if described in the commit message. This helps maintain a clear and accurate project history.
+
+This approach ensures that your branch is clean and ready for review in the PR without the risk of disrupting the commit history for other contributors.
+
+##### How to fix the commit that created a bug after merging PR
+
+If the Pull Request (PR) has already been merged and you realize that there was a mistake, you can still undo the changes, but the approach differs slightly. Here’s how to handle it using `git revert`:
+
+Your PR has been merged into the `main` branch (or any other target branch). Now you realize that the changes introduced by your PR need to be undone.
+
+###### Step-by-Step Guide
+
+1. **Identify the Merge Commit**
+   When a PR is merged, it creates a merge commit. You need to identify this merge commit in the `main` branch.
+
+   ```bash
+   git log --oneline --graph
+   ```
+
+   You’ll see something like this:
+
+   ```
+   *   9fceb02 Merge pull request #42 from feature-branch
+   |\
+   | * 1a2b3c4 Implement new feature
+   | * 5d6f7g8 Fix bug in calculation
+   |/
+   * e3c9d12 Previous commit on main
+   ```
+
+   Here, `9fceb02` is the merge commit for the PR.
+
+2. **Revert the Merge Commit**
+   To undo the changes introduced by the PR, use `git revert` with the `-m 1` option. The `-m 1` indicates that you want to revert the changes from the first parent of the merge commit (usually the main branch before the PR was merged).
+
+   ```bash
+   git revert -m 1 9fceb02
+   ```
+
+   This will create a new commit that reverses all the changes introduced by the PR.
+
+3. **Push the Revert Commit**
+   Push the new commit to the `main` branch:
+
+   ```bash
+   git push origin main
+   ```
+
+   Now the history will look something like this:
+
+   ```
+   *   abcd123 Revert "Merge pull request #42 from feature-branch"
+   *   9fceb02 Merge pull request #42 from feature-branch
+   |\
+   | * 1a2b3c4 Implement new feature
+   | * 5d6f7g8 Fix bug in calculation
+   |/
+   * e3c9d12 Previous commit on main
+   ```
+
+   The `abcd123` commit effectively undoes the changes introduced by the PR while keeping the commit history intact.
+
+4. **Communicate the Revert**
+   It’s good practice to communicate with your team or document the reason for the revert in the commit message and any relevant issue trackers. This ensures everyone is aware of the change and understands why the revert was necessary.
+
+###### Why Use `git revert` After a PR is Merged?
+
+- **History Preservation**: `git revert` preserves the commit history, which is crucial in a shared repository. This way, all changes are documented, including mistakes and their reversals.
+- **Avoids Conflicts**: `git revert` creates a new commit that undoes the changes, which is less likely to cause conflicts with other ongoing work compared to using `git reset`.
+- **Transparency**: The revert commit makes it clear to everyone in the project that the changes from the PR were undone for a specific reason.
+
+###### Alternative Approaches
+
+- **Re-apply Changes in a New PR**: If you want to make corrections rather than completely undoing the changes, you could create a new branch, apply the necessary fixes, and open a new PR.
+- **Hotfix Branch**: If the issue is critical, you might create a hotfix branch to address it quickly and then merge that branch back into `main`.
+
+By reverting the merge commit, you ensure that the problematic changes are undone while maintaining a clear and accurate history in your Git repository.
 
 ##### 2.6 [git merge vs git rebase](https://www.youtube.com/watch?v=CRlGDDprdOQ&ab_channel=Academind)
 
