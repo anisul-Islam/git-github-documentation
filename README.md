@@ -1991,6 +1991,129 @@ GitHub also has its own concept of "releases" that are closely related to Git ta
 
 In summary, GitHub tags are essentially Git tags, and they are used to mark important points in a repository's history, often associated with releases or significant commits. They help users easily reference and work with specific versions of a project.
 
+##### An example
+
+To push your code to GitHub in a series of versions (v1, v2, v3, etc.) and track these versions, you can follow these steps. This involves creating tags or branches for each version, committing your changes, and pushing them to the remote repository on GitHub.
+
+- Step 1: Initialize a Git Repository (If Not Done Already)
+
+If you haven't initialized your project as a Git repository yet, do so:
+
+```bash
+git init
+```
+
+This will initialize a Git repository in your project folder.
+
+- Step 2: Add and Commit Your Code for Version 1 (v1)
+
+1. Add your code to the staging area:
+
+   ```bash
+   git add .
+   ```
+
+2. Commit the changes with a message indicating this is version 1:
+
+   ```bash
+   git commit -m "Initial commit for version v1"
+   ```
+
+3. Tag the commit as `v1`:
+
+   ```bash
+   git tag v1
+   ```
+
+4. Push the code and the tag to GitHub:
+
+   ```bash
+   git push origin main
+   git push origin v1
+   ```
+
+- Step 3: Make Changes for Version 2 (v2)
+
+1. Make changes to your code as needed for version 2.
+
+2. Add and commit the changes:
+
+   ```bash
+   git add .
+   git commit -m "Changes for version v2"
+   ```
+
+3. Tag the commit as `v2`:
+
+   ```bash
+   git tag v2
+   ```
+
+4. Push the code and the tag to GitHub:
+
+   ```bash
+   git push origin main
+   git push origin v2
+   ```
+
+- Step 4: Make Changes for Version 3 (v3)
+
+1. Make changes to your code for version 3.
+
+2. Add and commit the changes:
+
+   ```bash
+   git add .
+   git commit -m "Changes for version v3"
+   ```
+
+3. Tag the commit as `v3`:
+
+   ```bash
+   git tag v3
+   ```
+
+4. Push the code and the tag to GitHub:
+
+   ```bash
+   git push origin main
+   git push origin v3
+   ```
+
+- Step 5: View the Versions on GitHub
+
+1. Go to your repository on GitHub.
+2. Click on the "Tags" section to view all the versions (`v1`, `v2`, `v3`).
+3. You will see the tags you pushed corresponding to the different versions of your code.
+
+- Optional: Create Separate Branches for Each Version (Instead of Tags)
+
+If you want to create branches for each version, follow these steps:
+
+1. After committing your changes for each version, create a new branch for the version:
+
+   ```bash
+   git checkout -b v1
+   ```
+
+2. Push the branch to GitHub:
+
+   ```bash
+   git push origin v1
+   ```
+
+3. Repeat the process for `v2`, `v3`, etc.
+
+   ```bash
+   git checkout -b v2
+   git push origin v2
+   ```
+
+- **Tags** are ideal for versioning releases (v1, v2, v3).
+- **Branches** allow you to maintain separate development tracks for different versions if needed.
+
+By following these steps, you can effectively track and view different versions of your code on GitHub.
+
 #### 3.3 Git squash
 
 **Git squash** is a process of combining multiple commits into a single commit. This is often done to clean up a commit history before merging into a main branch, making the commit history easier to understand and manage.
