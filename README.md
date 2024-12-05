@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/6413ec1e-9859-45bd-9b7a-ff4304910370)
+
+
 # Git & GitHub Documentation
 
 ## Table of Contents
