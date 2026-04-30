@@ -1,6 +1,6 @@
 # Git & GitHub Documentation
 
-## Table of Contents
+## Table of Contents 
 
 - [Beginner Part](#beginner-part)
 
